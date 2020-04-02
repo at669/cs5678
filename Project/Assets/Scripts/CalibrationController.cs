@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 using OculusSampleFramework;
+// using UnityEngine.SceneManagement;
 
 public class CalibrationController : MonoBehaviour
 {
     public GameObject TablePlane;
     public GameObject CalibrationCube;
-    private Vector3 PlaneLevel;
+    public GameObject ButtonPanel;
 
     // Start is called before the first frame update
     void Start()
     {
-        PlaneLevel = TablePlane.transform.position;
+        // PlaneLevel = TablePlane.transform.position;
     }
 
     // Update is called once per frame
@@ -26,10 +27,11 @@ public class CalibrationController : MonoBehaviour
 		{
 			if (obj.NewInteractableState == InteractableState.ActionState)
 			{
-				// _locomotive.StartStopStateChanged();
                 CalibrationCube.SetActive(false);
-                PlaneLevel.y = CalibrationCube.transform.position.y;
-                TablePlane.transform.position = PlaneLevel;
+                ButtonPanel.SetActive(false);
+
+                TablePlane.transform.position = CalibrationCube.transform.position;
+                // TablePlane.transform.rotation = new Quaternion(TablePlane.transform.rotation.x, CalibrationCube.transform.rotation.y, TablePlane.transform.rotation.z, 1);
 			}
 		}
 }
