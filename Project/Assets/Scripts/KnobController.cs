@@ -41,9 +41,9 @@ public class KnobController : MonoBehaviour
             tmpTurns[3] += 1;
             tmpTurns = UpdateKnobs(tmpTurns);
         }
-        for (int i = 0; i < tmpTurns.Length; i++){
-            Debug.Log(i + " " + tmpTurns[i] + " " + KnobList[i].transform.localEulerAngles.z);
-        }
+        // for (int i = 0; i < tmpTurns.Length; i++){
+        //     Debug.Log(i + " " + tmpTurns[i] + " " + KnobList[i].transform.localEulerAngles.z);
+        // }
     }
 
     public float[] UpdateKnobs(float[] val){
