@@ -7,14 +7,15 @@ using OculusSampleFramework;
 
 public class CalibrationController : MonoBehaviour
 {
-    public GameObject TablePlane;
+    public GameObject EnvParent;
     public GameObject CalibrationCube;
     public GameObject ButtonPanel;
+    public Vector3 CalibrationOffset;
 
     // Start is called before the first frame update
     void Start()
     {
-        // PlaneLevel = TablePlane.transform.position;
+
     }
 
     // Update is called once per frame
@@ -30,8 +31,7 @@ public class CalibrationController : MonoBehaviour
                 CalibrationCube.SetActive(false);
                 ButtonPanel.SetActive(false);
 
-                TablePlane.transform.position = CalibrationCube.transform.position;
-                // TablePlane.transform.rotation = new Quaternion(TablePlane.transform.rotation.x, CalibrationCube.transform.rotation.y, TablePlane.transform.rotation.z, 1);
+                EnvParent.transform.position = new Vector3(CalibrationCube.transform.position.x + CalibrationOffset.x, CalibrationCube.transform.position.y + CalibrationOffset.y, CalibrationCube.transform.position.z + CalibrationOffset.z);
 			}
 		}
 }
