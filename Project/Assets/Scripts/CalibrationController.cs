@@ -10,16 +10,16 @@ public class CalibrationController : MonoBehaviour
 {
 	public GameObject EnvParent;
     public GameObject TestCube;
-    public GameObject CalibrationCube;
-    public GameObject ButtonPanel;
+    // public GameObject CalibrationCube;
+    // public GameObject ButtonPanel;
     public Vector3 CalibrationOffset;
     public OVRHand lefthand;
     public OVRHand righthand;
-	public TextMeshProUGUI LeftText;
-	public TextMeshProUGUI RightText;
-	public TextMeshProUGUI ArcTanText;
-	public TextMeshProUGUI ArcTanText1;
-	public TextMeshProUGUI ArcTanText2;
+	// public TextMeshProUGUI LeftText;
+	// public TextMeshProUGUI RightText;
+	// public TextMeshProUGUI ArcTanText;
+	// public TextMeshProUGUI ArcTanText1;
+	// public TextMeshProUGUI ArcTanText2;
 
 
     // Start is called before the first frame update
@@ -48,13 +48,13 @@ public class CalibrationController : MonoBehaviour
 		}
     }
 
-    public void CalibrationButtonPressed(InteractableStateArgs obj)
-    {
-		if (obj.NewInteractableState == InteractableState.ActionState){
-			CalibrationCube.SetActive(false);
-			ButtonPanel.SetActive(false);
+    // public void CalibrationButtonPressed(InteractableStateArgs obj)
+    // {
+	// 	if (obj.NewInteractableState == InteractableState.ActionState){
+	// 		CalibrationCube.SetActive(false);
+	// 		ButtonPanel.SetActive(false);
 
-			EnvParent.transform.position = new Vector3(CalibrationCube.transform.position.x + CalibrationOffset.x, CalibrationCube.transform.position.y + CalibrationOffset.y, CalibrationCube.transform.position.z + CalibrationOffset.z);
-		}
-    }
+	// 		EnvParent.transform.position = new Vector3(CalibrationCube.transform.position.x + CalibrationOffset.x, CalibrationCube.transform.position.y + CalibrationOffset.y, CalibrationCube.transform.position.z + CalibrationOffset.z);
+	// 	}
+    // }
 }
