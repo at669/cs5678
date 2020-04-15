@@ -21,6 +21,7 @@ public class HandGrabber : OVRGrabber
         base.Update();
         CheckIndexPinch();
     }
+    
     void CheckIndexPinch(){
         float pinchStrength = hand.GetFingerPinchStrength(OVRHand.HandFinger.Index);
         bool isPinching = pinchStrength > pinchThreshold;
