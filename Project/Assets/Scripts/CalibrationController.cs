@@ -14,6 +14,7 @@ public class CalibrationController : MonoBehaviour
     public Vector3 CalibrationOffset;
     public OVRHand lefthand;
     public OVRHand righthand;
+	public GameObject ButtonHolders;
 	private bool isCalib = false;
 	private bool hasPinchedOnce = false;
 	private TutorialManager TutorialManager;
@@ -22,6 +23,7 @@ public class CalibrationController : MonoBehaviour
     void Start()
     {
 		TutorialManager = GameObject.FindObjectOfType<TutorialManager>();
+		ButtonHolders.SetActive(false);
     }
 
     // Update is called once per frame
@@ -46,6 +48,7 @@ public class CalibrationController : MonoBehaviour
 				ButtonPanel.SetActive(false);
 				isCalib = true;
 				TutorialManager.Calibrated();
+				ButtonHolders.SetActive(true);
 			}
 		}
     }
