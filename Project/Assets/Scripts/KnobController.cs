@@ -6,15 +6,16 @@ using OculusSampleFramework;
 
 public class KnobController : MonoBehaviour
 {
-    private TutorialManager TutorialManager;
-    private Transform EnvParent;
-    private List<GameObject> StoveList = new List<GameObject>();
-    public Material StoveTopMat;
-    private float[] tmpGlow = new float[]{0, 0, 0, 0};
+    private TutorialManager TutorialManager;                        // Manages onboarding UI
+    private Transform EnvParent;                                    // Holder for entire scene objects
+    private List<GameObject> StoveList = new List<GameObject>();    // Holds stovetops for color
+    public Material StoveTopMat;                                    // Material to change colors
+    private float[] tmpGlow = new float[]{0, 0, 0, 0};              // Low/medium/high storage
 
     // Start is called before the first frame update
     void Start()
     {
+        // Connect object references
         TutorialManager = GameObject.FindObjectOfType<TutorialManager>();
         EnvParent = GameObject.FindGameObjectWithTag("EnvParent").transform;
         for (int i = 0; i < EnvParent.Find("StoveParent/Stove/Stoves").transform.childCount; i++){
@@ -22,32 +23,7 @@ public class KnobController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        int idx = -1; //
-        if (Input.GetKeyDown(KeyCode.Alpha1)){
-            idx = 0;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2)){
-            idx = 1;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3)){
-            idx = 2;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4)){
-            idx = 3;
-        }
-        if (idx != -1){
-            var renderer = StoveList[idx].GetComponent<Renderer>();
-            if (tmpGlow[idx] < 3){ // less thanhigh
-                tmpGlow[idx] += 1f;
-            }
-            float newRed = tmpGlow[idx] / 3;
-            renderer.material.color = new Color(newRed, 0, 0);
-        }
-    }
-
+    // Button callbacks for each individual button
     public void UpButton0(InteractableStateArgs obj)
     {
         int idx = 0;
@@ -89,6 +65,7 @@ public class KnobController : MonoBehaviour
         }
     }
 
+    // Broken button; does not change colors
     public void UpButton3(InteractableStateArgs obj)
     {
         int idx = 3;
