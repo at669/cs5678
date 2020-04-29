@@ -17,11 +17,14 @@ public class HandGrabber : OVRGrabber
         hand = GetComponent<OVRHand>();
     }
 
+    // Call base update
     public override void Update(){
         base.Update();
         CheckIndexPinch();
     }
     
+
+    // Custom check to begin object grab based on hand tracking pinch
     void CheckIndexPinch(){
         float pinchStrength = hand.GetFingerPinchStrength(OVRHand.HandFinger.Index);
         bool isPinching = pinchStrength > pinchThreshold;
