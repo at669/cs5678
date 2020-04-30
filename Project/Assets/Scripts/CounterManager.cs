@@ -8,12 +8,16 @@ public class CounterManager : MonoBehaviour
     private int numTouches = 0;         // Number of times collider entered
     public TextMeshProUGUI num;         // TMPro object
     private bool entered = false;       // Determines if exit valid
+    private SphereCollider collider;
 
     // Start is called before the first frame update
     void Start()
     {
         // Clear text on start
         num.text = "";
+
+        collider = this.GetComponent<SphereCollider>();
+        collider.enabled = false;
     }
 
     // Begin valid entry
