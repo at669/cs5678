@@ -10347,7 +10347,7 @@ GameObject:
   - component: {fileID: 1695683678}
   - component: {fileID: 1695683679}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: CountCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16824,6 +16824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firsttouch: {fileID: 353885829}
   time: {fileID: 2058918635}
+  childCollider: {fileID: 1695683678}
 --- !u!64 &826510527375176060
 MeshCollider:
   m_ObjectHideFlags: 0
