@@ -13,8 +13,8 @@ public class ReactionManager : MonoBehaviour
     public TextMeshProUGUI firsttouch;          // TMPro object for debugging and data
     public TextMeshProUGUI time;                // TMPro object for debugging and data
     private bool entered = false;               // Determines if exit valid
-    private MeshCollider collider;
-    public SphereCollider childCollider;
+    private MeshCollider collider;              // Meshcollider on stovetop
+    public SphereCollider childCollider;        // Attached spherecollider for counter
     
     // Start is called before the first frame update
     void Start()

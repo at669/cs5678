@@ -24,7 +24,7 @@ public class CalibrationController : MonoBehaviour
     {
 		// Connect object references
 		TutorialManager = GameObject.FindObjectOfType<TutorialManager>();
-		ButtonHolders.SetActive(false);
+		// ButtonHolders.SetActive(false);
     }
 
     // Update is called once per frame
