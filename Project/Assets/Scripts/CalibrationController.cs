@@ -15,6 +15,7 @@ public class CalibrationController : MonoBehaviour
     public OVRHand lefthand;					// Left hand OVR object
     public OVRHand righthand;					// Right hand OVR object
 	public GameObject ButtonHolders;			// Stovetop control buttons
+	private KnobController KnobController;		// Knob controller (to set button interactivity)
 	private bool isCalib = false;				// True if calibration button pressed
 	private bool hasPinchedOnce = false;		// True if calibration began 
 	private TutorialManager TutorialManager;
@@ -24,6 +25,7 @@ public class CalibrationController : MonoBehaviour
     {
 		// Connect object references
 		TutorialManager = GameObject.FindObjectOfType<TutorialManager>();
+		KnobController = GameObject.FindObjectOfType<KnobController>();
 		// ButtonHolders.SetActive(false);
     }
 
@@ -56,6 +58,7 @@ public class CalibrationController : MonoBehaviour
 				ButtonPanel.SetActive(false);
 				isCalib = true;
 				TutorialManager.Calibrated();
+				KnobController.Calibrated();
 				ButtonHolders.SetActive(true);
 			}
 		}

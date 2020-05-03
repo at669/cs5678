@@ -14,7 +14,10 @@ public class ReactionManager : MonoBehaviour
     public TextMeshProUGUI time;                // TMPro object for debugging and data
     private bool entered = false;               // Determines if exit valid
     private MeshCollider collider;              // Meshcollider on stovetop
-    public SphereCollider childCollider;        // Attached spherecollider for counter
+    public SphereCollider TLcollider;        // Attached spherecollider for counter
+    public SphereCollider BLcollider;        // Attached spherecollider for counter
+    public SphereCollider TRcollider;        // Attached spherecollider for counter
+    public SphereCollider BRcollider;        // Attached spherecollider for counter
     
     // Start is called before the first frame update
     void Start()
@@ -62,6 +65,9 @@ public class ReactionManager : MonoBehaviour
         promptBegan = true;
         collider.enabled = true;
 
-        childCollider.enabled = true;
+        TLcollider.enabled = true;
+        BLcollider.enabled = true;
+        TRcollider.enabled = true;
+        BRcollider.enabled = true;
     }
 }
